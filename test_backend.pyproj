@@ -21,37 +21,42 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="modules\django_api_module\backend\admin.py" />
-    <Compile Include="modules\django_api_module\backend\apps.py" />
-    <Compile Include="modules\django_api_module\backend\migrations\__init__.py" />
-    <Compile Include="modules\django_api_module\backend\models.py" />
-    <Compile Include="modules\django_api_module\backend\tests.py" />
-    <Compile Include="modules\django_api_module\backend\views.py" />
-    <Compile Include="modules\django_api_module\backend\__init__.py" />
-    <Compile Include="modules\django_api_module\django_api_module\asgi.py" />
-    <Compile Include="modules\django_api_module\django_api_module\settings.py" />
-    <Compile Include="modules\django_api_module\django_api_module\urls.py" />
-    <Compile Include="modules\django_api_module\django_api_module\wsgi.py" />
-    <Compile Include="modules\django_api_module\django_api_module\__init__.py" />
-    <Compile Include="modules\django_api_module\manage.py" />
+    <Compile Include="app\modules\django_api_module\backend\admin.py" />
+    <Compile Include="app\modules\django_api_module\backend\apps.py" />
+    <Compile Include="app\modules\django_api_module\backend\migrations\__init__.py" />
+    <Compile Include="app\modules\django_api_module\backend\models.py" />
+    <Compile Include="app\modules\django_api_module\backend\tests.py" />
+    <Compile Include="app\modules\django_api_module\backend\views.py" />
+    <Compile Include="app\modules\django_api_module\backend\__init__.py" />
+    <Compile Include="app\modules\django_api_module\django_api_module\asgi.py" />
+    <Compile Include="app\modules\django_api_module\django_api_module\settings.py" />
+    <Compile Include="app\modules\django_api_module\django_api_module\urls.py" />
+    <Compile Include="app\modules\django_api_module\django_api_module\wsgi.py" />
+    <Compile Include="app\modules\django_api_module\django_api_module\__init__.py" />
+    <Compile Include="app\modules\django_api_module\manage.py" />
+    <Compile Include="app\modules\fast_api_module\__init__.py" />
     <Compile Include="main.py" />
-    <Compile Include="models\data_controller_postgresql.py" />
-    <Compile Include="models\data_controller_sqlite.py" />
-    <Compile Include="models\item.py" />
-    <Compile Include="modules\fast_api_module\fast_api_module.py" />
+    <Compile Include="app\models\data_controller_postgresql.py" />
+    <Compile Include="app\models\data_controller_sqlite.py" />
+    <Compile Include="app\models\item.py" />
+    <Compile Include="app\modules\fast_api_module\fast_api_module.py" />
+    <Compile Include="tests\test_fast_api.py" />
+    <Compile Include="tests\__init__.py" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="modules\django_api_module\backend\" />
-    <Folder Include="modules\django_api_module\backend\migrations\" />
-    <Folder Include="modules\django_api_module\" />
-    <Folder Include="modules\django_api_module\django_api_module\" />
-    <Folder Include="models\" />
-    <Folder Include="data\" />
-    <Folder Include="modules\" />
-    <Folder Include="modules\fast_api_module\" />
+    <Folder Include="app\modules\django_api_module\backend\" />
+    <Folder Include="app\modules\django_api_module\backend\migrations\" />
+    <Folder Include="app\modules\django_api_module\" />
+    <Folder Include="app\modules\django_api_module\django_api_module\" />
+    <Folder Include="app\models\" />
+    <Folder Include="app\data\" />
+    <Folder Include="app\modules\" />
+    <Folder Include="app\modules\fast_api_module\" />
+    <Folder Include="tests\" />
+    <Folder Include="app\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="data\test_backend_db.db" />
+    <Content Include="app\data\test_backend_db.db" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

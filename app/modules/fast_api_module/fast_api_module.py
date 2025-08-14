@@ -2,13 +2,9 @@
 from fastapi import FastAPI, Body
 from fastapi.responses import JSONResponse
 
-import os
-import sys
-sys.path.append(os.getcwd())
-
-from models.data_controller_sqlite import DataControllerSqlite
-from models.data_controller_postgresql import DataControllerPostgresql
-from models.item import Item
+from app.models.data_controller_sqlite import DataControllerSqlite
+from app.models.data_controller_postgresql import DataControllerPostgresql
+from app.models.item import Item
 
 app = FastAPI()
 #dataController = DataControllerSqlite()
@@ -35,7 +31,7 @@ def testItems():
     return JSONResponse(convertListToJson(items))
 
 @app.get("/testItem/{id}")
-def testItemId(id: int):
+def testItemId(id = 0):
     return JSONResponse(content={"message": ""})
 
 @app.post("/testItem")

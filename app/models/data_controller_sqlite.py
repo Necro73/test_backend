@@ -1,7 +1,7 @@
 ﻿import random
 import sqlite3
 
-from models.item import Item
+from app.models.item import Item
 
 class DataControllerSqlite:
 

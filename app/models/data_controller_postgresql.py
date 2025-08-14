@@ -1,7 +1,7 @@
 ﻿import random
 import psycopg2
 
-from models.item import Item
+from app.models.item import Item
 
 class DataControllerPostgresql:
 
