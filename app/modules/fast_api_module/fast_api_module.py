@@ -32,7 +32,8 @@ def testItems():
 
 @app.get("/testItem/{id}")
 def testItemId(id = 0):
-    return JSONResponse(content={"message": ""})
+    item = dataController.getItemDB(5)
+    return JSONResponse(convertListToJson(item))
 
 @app.post("/testItem")
 def testItemAdd(data = Body()):

@@ -10,9 +10,10 @@ class DataControllerPostgresql:
         self.host = "127.0.0.1"
         self.user = "postgres"
         self.password = "kidGDEu3456uh"
+
         #sessionDB = psycopg2.connect(dbname=self.dbName, user=self.user, password=self.password, host=self.host)
         #cursorDB = sessionDB.cursor()
-        #
+        #cursorDB.execute("DELETE FROM items;")
         #for i in range(30):
         #    figureType = genRandFigureType()
         #    cursorDB.execute(f"INSERT INTO items (name, figure_type, color, price) VALUES ('{genRandName()} {figureType}', '{figureType}', '{genRandColor()}', {genRandPrice()})")
@@ -22,6 +23,16 @@ class DataControllerPostgresql:
         sessionDB = psycopg2.connect(dbname=self.dbName, user=self.user, password=self.password, host=self.host)
         cursorDB = sessionDB.cursor()
         cursorDB.execute("SELECT * FROM items")
+        itemsTuple = cursorDB.fetchall()
+        sessionDB.commit()
+        cursorDB.close()
+        sessionDB.close()
+        return list(map(lambda tpl: Item(*tpl), itemsTuple))
+
+    def getItemDB(self, id = 0):
+        sessionDB = psycopg2.connect(dbname=self.dbName, user=self.user, password=self.password, host=self.host)
+        cursorDB = sessionDB.cursor()
+        cursorDB.execute(f"SELECT * FROM items WHERE item_id IN ({id})")
         itemsTuple = cursorDB.fetchall()
         sessionDB.commit()
         cursorDB.close()

@@ -1,4 +1,4 @@
-"""
+﻿"""
 URL configuration for django_api_module project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -20,7 +20,8 @@ from backend import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.hello, name='hello'),
+    path('', views.root, name='root'),
     path('testItems', views.testItems, name='testItems'),
-    re_path(r'^testItemGet/\d+', views.testItemId),
+    #re_path(r'^testItem/\d+', views.testItemId, name='testItemId'),
+    path('testItem', views.testItem, name='testItem'),
 ]
